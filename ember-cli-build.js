@@ -1,6 +1,9 @@
 /*jshint node:true*/
 /* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var EmberApp   = require('ember-cli/lib/broccoli/ember-app');
+var concat     = require('broccoli-concat');
+var funnel     = require('broccoli-funnel');
+var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -20,5 +23,34 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  // == Funnel external libraries into individual trees ==
+var defaultOptions = {
+  include: [
+    "**/*.css",
+    "**/*.js",
+    "**/*.map"
+  ]
+};
+
+  var bootstrap = funnel('node_modules/bootstrap/dist', defaultOptions);
+
+  var libraryTree = mergeTrees([
+  bootstrap
+]);
+
+// == Concatenate style trees ==
+// Use inputFiles to specify loading order.
+
+var allStyles = concat(libraryTree, {
+  inputFiles: [
+    'css/bootstrap.css'
+  ],
+  outputFile: 'style.css',
+  sourceMapConfig: {
+    extensions: ['css'],
+    mapCommentType: 'block'
+  }
+});
+
+  return app.toTree(allStyles);
 };
