@@ -24,33 +24,39 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   // == Funnel external libraries into individual trees ==
-var defaultOptions = {
-  include: [
-    "**/*.css",
-    "**/*.js",
-    "**/*.map"
-  ]
-};
+  var defaultOptions = {
+    include: [
+      "**/*.css",
+      "**/*.js",
+      "**/*.map"
+    ]
+  };
 
-  var bootstrap = funnel('node_modules/bootstrap/dist', defaultOptions);
+    var bootstrap = funnel('node_modules/bootstrap/dist', defaultOptions);
 
-  var libraryTree = mergeTrees([
-  bootstrap
-]);
+    var libraryTree = mergeTrees([
+    bootstrap
+  ]);
 
-// == Concatenate style trees ==
-// Use inputFiles to specify loading order.
+  // == Concatenate style trees ==
+  // Use inputFiles to specify loading order.
 
-var allStyles = concat(libraryTree, {
-  inputFiles: [
-    'css/bootstrap.css'
-  ],
-  outputFile: 'style.css',
-  sourceMapConfig: {
-    extensions: ['css'],
-    mapCommentType: 'block'
-  }
-});
+  var allStyles = concat(libraryTree, {
+    inputFiles: [
+      'css/bootstrap.css'
+    ],
+    outputFile: 'style.css',
+    sourceMapConfig: {
+      extensions: ['css'],
+      mapCommentType: 'block'
+    }
+  });
 
-  return app.toTree(allStyles);
+  // == Funnel external assets into individual trees ==
+
+  var bootstrapFonts = funnel('node_modules/bootstrap/dist/fonts', {
+    destDir: 'fonts'
+  });
+
+  return app.toTree([allStyles, bootstrapFonts]);
 };
