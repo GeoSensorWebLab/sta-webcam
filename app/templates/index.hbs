@@ -2,14 +2,14 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h1>{{ model.description }}</h1>
+    <h1>{{model.description}}</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-md-4">
     <h3>Details</h3>
     <div id="thing-properties">
-      {{ model.properties }}
+      {{properties-object properties=model.properties}}
     </div>
   </div>
   <div class="col-md-4">
