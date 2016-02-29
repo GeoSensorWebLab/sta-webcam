@@ -14,9 +14,19 @@
   </div>
   <div class="col-md-4">
     <h3>Location Info</h3>
-    {{model.firstLocation}}
     <div id="location-properties">
-      {{properties-object properties=model.firstLocation.properties}}
+      <dl>
+        <dt>Description</dt>
+        <dd>
+          <pre>{{model.firstLocation.description}}</pre>
+        </dd>
+
+        <dt>Encoding Type</dt>
+        <dd>
+          <pre>{{model.firstLocation.encodingType}}</pre>
+        </dd>
+      </dl>
+
     </div>
   </div>
   <div class="col-md-4">
