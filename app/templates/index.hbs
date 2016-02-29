@@ -14,7 +14,10 @@
   </div>
   <div class="col-md-4">
     <h3>Location Info</h3>
-    <div id="location-properties"></div>
+    {{model.firstLocation}}
+    <div id="location-properties">
+      {{properties-object properties=model.firstLocation.properties}}
+    </div>
   </div>
   <div class="col-md-4">
     <h3>Location</h3>
