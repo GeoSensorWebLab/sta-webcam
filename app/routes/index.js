@@ -12,9 +12,8 @@ var thing = {
   "HistoricalLocations@iot.navigationLink": "../Things(1205774)/HistoricalLocations"
 };
 
-
 export default Ember.Route.extend({
   model() {
-    return thing;
+    return this.store.findRecord("thing", 1205774);
   }
 });
