@@ -33,17 +33,32 @@ module.exports = function(defaults) {
   };
 
     var bootstrap = funnel('node_modules/bootstrap/dist', defaultOptions);
+    var leaflet = funnel('node_modules/leaflet/dist', defaultOptions);
 
     var libraryTree = mergeTrees([
-    bootstrap
+    bootstrap,
+    leaflet
   ]);
+
+  // == Concatenate script trees ==
+  // Use inputFiles to specify loading order.
+
+  var allScripts = concat(mergeTrees([
+    libraryTree
+  ]), {
+    inputFiles: [
+      'leaflet-src.js'
+    ],
+    outputFile: 'app.js'
+  });
 
   // == Concatenate style trees ==
   // Use inputFiles to specify loading order.
 
   var allStyles = concat(libraryTree, {
     inputFiles: [
-      'css/bootstrap.css'
+      'css/bootstrap.css',
+      'leaflet.css'
     ],
     outputFile: 'style.css',
     sourceMapConfig: {
@@ -58,5 +73,9 @@ module.exports = function(defaults) {
     destDir: 'fonts'
   });
 
-  return app.toTree([allStyles, bootstrapFonts]);
+  var leafletAssets = funnel('node_modules/leaflet/dist/images', {
+    destDir: 'images'
+  });
+
+  return app.toTree([allStyles, allScripts, bootstrapFonts, leafletAssets]);
 };
