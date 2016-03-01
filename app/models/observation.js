@@ -8,5 +8,5 @@ export default DS.Model.extend({
   resultTime: DS.attr('date'),
   validTime: DS.attr(),
 
-  datastreams: DS.belongsTo('datastream', { async: true })
+  datastreams: DS.belongsTo('datastream', { inverse: 'observations' })
 });
