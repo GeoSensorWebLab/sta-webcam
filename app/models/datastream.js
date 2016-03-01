@@ -5,6 +5,7 @@ export default DS.Model.extend({
   observationType: DS.attr('string'),
   unitOfMeasurement: DS.attr(),
 
+  'observed-property': DS.belongsTo('observed-property'),
   thing: DS.belongsTo('thing', { async: true }),
   sensor: DS.belongsTo('sensor')
 });
