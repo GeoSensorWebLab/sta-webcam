@@ -102,7 +102,19 @@
     </div>
     <div class="col-md-4">
       <h2>Last Value</h2>
-      <div class="observation-preview"></div>
+      <div class="observation-preview">
+        <h4>{{datastream.lastObservation.phenomenonTime}}</h4>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <button data-target="result" class="btn btn-link">Result</button>
+          </li>
+          <li>
+            <button data-target="feature" class="btn btn-link">Feature</button>
+          </li>
+        </ul>
+        <div class="preview"></div>
+
+      </div>
     </div>
   </div>
 {{/each}}
