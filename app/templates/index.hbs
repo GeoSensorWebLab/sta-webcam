@@ -15,17 +15,7 @@
   <div class="col-md-4">
     <h3>Location Info</h3>
     <div id="location-properties">
-      <dl>
-        <dt>Description</dt>
-        <dd>
-          <pre>{{model.firstLocation.description}}</pre>
-        </dd>
-
-        <dt>Encoding Type</dt>
-        <dd>
-          <pre>{{model.firstLocation.encodingType}}</pre>
-        </dd>
-      </dl>
+      {{entity-details entity=model.firstLocation attributes="description,encodingType"}}
     </div>
   </div>
   <div class="col-md-4">
@@ -48,54 +38,19 @@
         <div class="col-md-4">
           <h3>Datastream</h3>
           <div class="datastream-details">
-            <dl>
-              <dt>Description</dt>
-              <dd>
-                <pre>{{datastream.description}}</pre>
-              </dd>
-
-              <dt>Observation Type</dt>
-              <dd>
-                <pre>{{datastream.observationType}}</pre>
-              </dd>
-            </dl>
+            {{entity-details entity=datastream attributes="description,observationType"}}
           </div>
         </div>
         <div class="col-md-4">
           <h3>Observed Property</h3>
           <div class="observed-property-details">
-            <dl>
-              <dt>Name</dt>
-              <dd>
-                <pre>{{datastream.observed-property.name}}</pre>
-              </dd>
-
-              <dt>Description</dt>
-              <dd>
-                <pre>{{datastream.observed-property.description}}</pre>
-              </dd>
-
-              <dt>Definition</dt>
-              <dd>
-                <pre>{{datastream.observed-property.definition}}</pre>
-              </dd>
-            </dl>
+            {{entity-details entity=datastream.observed-property attributes="name,description,definition"}}
           </div>
         </div>
         <div class="col-md-4">
           <h3>Sensor</h3>
           <div class="sensor-details">
-            <dl>
-              <dt>Description</dt>
-              <dd>
-                <pre>{{datastream.sensor.description}}</pre>
-              </dd>
-
-              <dt>Metadata</dt>
-              <dd>
-                <pre>{{datastream.sensor.metadata}}</pre>
-              </dd>
-            </dl>
+            {{entity-details entity=datastream.sensor attributes="description,metadata"}}
           </div>
         </div>
       </div>
