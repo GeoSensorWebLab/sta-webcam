@@ -10,7 +10,7 @@ function isLink(key) {
 function extractLinks(payload) {
   payload.links = {};
   Object.keys(payload).filter(isLink).forEach(function(key) {
-    var linkTo = key.split("@")[0].toLowerCase();
+    var linkTo = Ember.String.dasherize(key.split("@")[0]);
     payload.links[linkTo] = payload[key];
     delete payload[key];
   });
