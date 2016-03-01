@@ -1,3 +1,11 @@
 #location-map-view, #location-map-view > div {
   height: 300px;
 }
+
+.feature-preview {
+  display: none;
+}
+
+.feature-preview, .feature-preview > div {
+  height: 300px;
+}

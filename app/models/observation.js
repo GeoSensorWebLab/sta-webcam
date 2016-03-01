@@ -8,5 +8,6 @@ export default DS.Model.extend({
   resultTime: DS.attr('date'),
   validTime: DS.attr(),
 
-  datastreams: DS.belongsTo('datastream', { inverse: 'observations' })
+  datastreams: DS.belongsTo('datastream', { inverse: 'observations' }),
+  'feature-of-interest': DS.belongsTo('feature-of-interest')
 });

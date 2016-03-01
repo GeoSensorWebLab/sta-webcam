@@ -7,4 +7,12 @@
     <button data-target="feature" class="btn btn-link">Feature</button>
   </li>
 </ul>
-<div class="preview"></div>
+<div class="preview">
+  <div class="result-preview">
+    <img src="{{observation.result}}" class="img-responsive" />
+  </div>
+
+  <div class="feature-preview">
+    {{geojson-map geojson=observation.feature-of-interest.feature}}
+  </div>
+</div>

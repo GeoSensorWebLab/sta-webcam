@@ -22,14 +22,28 @@ export default Ember.Component.extend({
       this.updateGeoJSON();
     }
 
+    // If this element is invisible when added to the DOM and then made visible,
+    // then we have to update the map. Do this by triggering "isVisible" on the
+    // element by whoever is controlling visibility.
+    this.$(this.get("element")).bind('isVisible', () => {
+      map.invalidateSize();
+      this.updateGeoJSON();
+    });
+
     this.addObserver("geojson", this, "updateGeoJSON");
   },
 
   updateGeoJSON() {
     var map = this.get("map");
+
+    if (this.get("layer")) {
+      map.removeLayer(this.get("layer"));
+    }
+
     var layer = L.geoJson(this.get("geojson"));
 
     map.addLayer(layer);
     map.fitBounds(layer.getBounds(), { padding: [5, 5] });
+    this.set("layer", layer);
   }
 });
