@@ -24,16 +24,17 @@ export default DS.RESTSerializer.extend({
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
     var newPayload = {};
     var collectionName = inflector.pluralize(primaryModelClass.modelName);
-    newPayload[collectionName] = payload.value;
+    newPayload[collectionName] = payload.value.map(function(item) {
+      return extractLinks(item);
+    });
 
     return this._super(store, primaryModelClass, newPayload, id, requestType);
   },
 
-  normalizeFindRecordResponse(store, primaryModelClass, payload, id, requestType) {
+  normalizeSingleResponse(store, primaryModelClass, payload, id, requestType) {
     var newPayload = {};
     payload = extractLinks(payload);
     newPayload[primaryModelClass.modelName] = payload;
-
     return this._super(store, primaryModelClass, newPayload, id, requestType);
   }
 });
