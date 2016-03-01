@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>{{datastream.description}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Datastream</h3>
+        <div class="datastream-details">
+          {{entity-details entity=datastream attributes="description,observationType"}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Observed Property</h3>
+        <div class="observed-property-details">
+          {{entity-details entity=datastream.observed-property attributes="name,description,definition"}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>Sensor</h3>
+        <div class="sensor-details">
+          {{entity-details entity=datastream.sensor attributes="description,metadata"}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h2>Last Value</h2>
+    <div class="observation-preview">
+      {{observation-preview observation=datastream.last-observation.firstObject}}
+    </div>
+  </div>
+</div>
