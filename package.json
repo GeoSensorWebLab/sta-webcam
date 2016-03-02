@@ -24,6 +24,7 @@
     "mqtt": "^1.7.3"
   },
   "devDependencies": {
+    "broccoli": "^0.16.9",
     "broccoli-asset-rev": "^2.2.0",
     "broccoli-concat": "^2.1.0",
     "broccoli-funnel": "^1.0.1",
