@@ -23,15 +23,15 @@ export default Ember.Route.extend({
         var entityID = resource.match(/\d+/)[0];
 
         if (entityName === "datastream") {
-          this.store.findRecord("datastream", entityID).then((datastream) => {
-            var object = JSON.parse(message.toString());
-            var modelClass = this.store.modelFor("observation");
-            var serializer = this.store.serializerFor("observation");
+          var datastream = this.store.peekRecord("datastream", entityID);
+          var object = JSON.parse(message.toString());
 
-            var payload = serializer.normalizeSingleResponse(this.store, modelClass, object, object["@iot.id"]);
-            var observation = this.store.push(payload);
-            datastream.get('last-observation').pushObject(observation);
-          });
+          var modelClass = this.store.modelFor("observation");
+          var serializer = this.store.serializerFor("observation");
+          var payload = serializer.normalizeSingleResponse(this.store, modelClass, object, object["@iot.id"]);
+          var observation = this.store.push(payload);
+          
+          datastream.get('last-observation').pushObject(observation);
         }
       });
     });
