@@ -15,6 +15,9 @@ function extractLinks(payload) {
     delete payload[key];
   });
 
+  payload.links.self = payload["@iot.selfLink"];
+  delete payload["@iot.selfLink"];
+
   return payload;
 }
 
