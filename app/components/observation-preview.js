@@ -7,7 +7,7 @@ export default Ember.Component.extend({
         this.$(".result-preview").hide();
         this.$(".feature-preview").show();
         // Toggle visibility of special elements in feature preview
-        this.$(".feature-preview *").trigger("isVisible");
+        this.$(".feature-preview > div").trigger("isVisible");
 
         this.$("li").toggleClass("active");
       }

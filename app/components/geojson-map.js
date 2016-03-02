@@ -40,10 +40,12 @@ export default Ember.Component.extend({
       map.removeLayer(this.get("layer"));
     }
 
-    var layer = L.geoJson(this.get("geojson"));
+    if (this.get("geojson")) {
+      var layer = L.geoJson(this.get("geojson"));
 
-    map.addLayer(layer);
-    map.fitBounds(layer.getBounds(), { padding: [5, 5] });
-    this.set("layer", layer);
+      map.addLayer(layer);
+      map.fitBounds(layer.getBounds(), { padding: [5, 5] });
+      this.set("layer", layer);
+    }
   }
 });
