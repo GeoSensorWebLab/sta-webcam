@@ -2,6 +2,10 @@
   height: 300px;
 }
 
+.preview {
+  margin-bottom: 1em;
+}
+
 .feature-preview {
   display: none;
 }
@@ -23,4 +27,8 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
+}
+
+nav {
+  margin-top: 2em;
 }

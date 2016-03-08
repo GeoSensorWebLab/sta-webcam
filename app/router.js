@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('datastreams', function() {
+    this.route('show', { path: ':datastream_id' });
+  });
 });
 
 export default Router;
