@@ -1,20 +1,25 @@
 <!-- slide wrapper -->
 <div class="carousel-preview">
   <div class="item">
-    <img src="{{activeObservation.result}}" class="img-responsive">
-    <p class="observation phenomenonTime">{{activeObservation.phenomenonTime}}</p>
+    {{#if isLoading}}
+    <h2>Loading</h2>
+    {{/if}}
+    <a href={{active-observation.result}} class="{{if isLoading "invisible"}}">
+      <img src="{{active-observation.result}}" class="img-responsive">
+    </a>
+    <p class="observation phenomenonTime">{{active-observation.phenomenonTime}}</p>
   </div>
 </div>
 
 {{#if hasPreviousObservation}}
-<div class="left carousel-control">
+<div class="left carousel-control" {{action "loadPrevious"}}>
   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
   <span class="sr-only">Previous</span>
 </div>
 {{/if}}
 
 {{#if hasNextObservation}}
-<div class="right carousel-control">
+<div class="right carousel-control" {{action "loadNext"}}>
   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
   <span class="sr-only">Next</span>
 </div>

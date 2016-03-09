@@ -37,11 +37,7 @@ nav {
   background-color: #555;
 }
 
-.results-carousel .carousel-preview .item img {
-  margin: 0 auto;
-}
-
-.results-carousel .carousel-preview .item .observation.phenomenonTime {
+.results-carousel .carousel-preview .item * {
   margin: 0 auto;
   text-align: center;
   color: #FFF;
