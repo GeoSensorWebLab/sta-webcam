@@ -1,7 +1,9 @@
+import RecognizerMixin from 'ember-gestures/mixins/recognizers';
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(RecognizerMixin, {
   classNames: ['results-carousel'],
+  recognizers: 'swipe',
   isLoading: true,
 
   observations: Ember.computed('datastream.observations', function () {

@@ -1,12 +1,10 @@
 <!-- slide wrapper -->
-<div class="carousel-preview">
+<div class="carousel-preview" {{action "loadPrevious" on="swipeRight"}} {{action "loadNext" on="swipeLeft"}}>
   <div class="item">
     {{#if isLoading}}
     <h2>Loading</h2>
     {{/if}}
-    <a href={{active-observation.result}} class="{{if isLoading "invisible"}}">
-      <img src="{{active-observation.result}}" class="img-responsive">
-    </a>
+    <img src="{{active-observation.result}}" class="img-responsive {{if isLoading "invisible"}}">
     <p class="observation phenomenonTime">{{active-observation.phenomenonTime}}</p>
   </div>
 </div>
