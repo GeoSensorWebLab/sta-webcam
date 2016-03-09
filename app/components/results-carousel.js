@@ -19,6 +19,10 @@ export default Ember.Component.extend(RecognizerMixin, {
   }),
 
   actions: {
+    loadNewer() {
+      this.get('datastream.observations').reload();
+    },
+
     loadNext() {
       var next = this.getActiveOffset(1);
       if (next) {
