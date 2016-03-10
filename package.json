@@ -46,7 +46,7 @@
     "ember-data": "^2.3.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-gestures": "0.4.1",
+    "ember-gestures": "https://github.com/GeoSensorWebLab/ember-gestures#aa127710b87761168e6d9303ef01d475a15520cb",
     "ember-getowner-polyfill": "1.0.0",
     "ember-hammertime": "1.0.1",
     "ember-load-initializers": "^0.5.0",
