@@ -1,0 +1,18 @@
+{
+  "description": "Monitoring server webcam 2 TS HTTP Server",
+  "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation",
+  "unitOfMeasurement": {
+    "symbol": "",
+    "name": "",
+    "definition": ""
+  },
+  "Thing": {
+    "@iot.id": 1205774
+  },
+  "Sensor": {
+    "@iot.id": 1654445
+  },
+  "ObservedProperty": {
+    "@iot.id": 1205778
+  }
+}
