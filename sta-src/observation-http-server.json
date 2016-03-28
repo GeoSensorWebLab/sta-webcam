@@ -1,0 +1,9 @@
+{
+  "@iot.id": 1700874,
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Observations(1700874)",
+  "phenomenonTime": "2016-03-28T23:54:00.000Z",
+  "result": "http://monitor.geocens.ca:6080",
+  "resultTime": null,
+  "Datastream@iot.navigationLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Observations(1700874)/Datastream",
+  "FeatureOfInterest@iot.navigationLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Observations(1700874)/FeatureOfInterest"
+}
