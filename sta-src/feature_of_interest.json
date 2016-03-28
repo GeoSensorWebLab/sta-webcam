@@ -1,0 +1,18 @@
+{
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/FeaturesOfInterest(1205780)",
+  "feature": {
+    "geometry": {
+      "coordinates": [
+        -114.13424,
+        51.0814
+      ],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {}
+  },
+  "@iot.id": 1205780,
+  "encodingType": "application/vnd.geo+json",
+  "description": "32 Avenue NW at 33 Street NW, Calgary, Alberta, Canada",
+  "Observations@iot.navigationLink": "../FeaturesOfInterest(1205780)/Observations"
+}

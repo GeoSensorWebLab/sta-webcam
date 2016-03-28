@@ -1,0 +1,4 @@
+{
+  "phenomenonTime": "<%= phenomenonTime %>",
+  "result": "http://cam.monitor.geocens.ca/src/<%= path %>"
+}

@@ -1,0 +1,8 @@
+{
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/ObservedProperties(1205778)",
+  "Datastreams@iot.navigationLink": "../ObservedProperties(1205778)/Datastreams",
+  "@iot.id": 1205778,
+  "name": "Traffic",
+  "description": "Traffic on roads may consist of pedestrians, ridden or herded animals, vehicles, streetcars, buses and other conveyances, either singly or together, while using the public way for purposes of travel.",
+  "definition": "http://dbpedia.org/page/Traffic"
+}

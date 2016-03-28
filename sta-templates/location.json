@@ -1,0 +1,12 @@
+{
+  "description": "Calgary Centre for Innovative Technology",
+  "encodingType": "application/vnd.geo+json",
+  "location": {
+    "geometry": {
+      "coordinates": [-114.1337777, 51.080468],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {}
+  }
+}

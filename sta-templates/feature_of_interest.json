@@ -1,0 +1,12 @@
+{
+  "description": "32 Avenue NW at 33 Street NW, Calgary, Alberta, Canada",
+  "encodingType": "application/vnd.geo+json",
+  "feature": {
+    "geometry": {
+      "coordinates": [-114.13424, 51.08140],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {}
+  }
+}

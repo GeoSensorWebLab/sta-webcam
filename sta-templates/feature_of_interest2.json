@@ -1,0 +1,14 @@
+{
+  "description": "Parking Lot 12 and 63, University of Calgary, Calgary, Canada",
+  "encodingType": "application/vnd.geo+json",
+  "feature": {
+    "geometry": {
+      "coordinates": [-114.13450, 51.08050],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "openstreetmap@link": "https://www.openstreetmap.org/#map=19/51.08050/-114.13450"
+    }
+  }
+}

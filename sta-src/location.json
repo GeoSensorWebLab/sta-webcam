@@ -1,0 +1,19 @@
+{
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Locations(1205776)",
+  "@iot.id": 1205776,
+  "encodingType": "application/vnd.geo+json",
+  "Things@iot.navigationLink": "../Locations(1205776)/Things",
+  "description": "Calgary Centre for Innovative Technology",
+  "location": {
+    "geometry": {
+      "coordinates": [
+        -114.1337777,
+        51.080468
+      ],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {}
+  },
+  "HistoricalLocations@iot.navigationLink": "../Locations(1205776)/HistoricalLocations"
+}

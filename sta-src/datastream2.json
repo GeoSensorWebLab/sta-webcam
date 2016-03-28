@@ -1,0 +1,15 @@
+{
+  "unitOfMeasurement": {
+    "symbol": "",
+    "name": "",
+    "definition": ""
+  },
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Datastreams(1654446)",
+  "Thing@iot.navigationLink": "../Datastreams(1654446)/Thing",
+  "Sensor@iot.navigationLink": "../Datastreams(1654446)/Sensor",
+  "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation",
+  "@iot.id": 1654446,
+  "description": "Monitoring server webcam 2",
+  "Observations@iot.navigationLink": "../Datastreams(1654446)/Observations",
+  "ObservedProperty@iot.navigationLink": "../Datastreams(1654446)/ObservedProperty"
+}

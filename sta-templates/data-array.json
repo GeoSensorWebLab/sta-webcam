@@ -1,0 +1,20 @@
+[
+  {
+    "Datastream": {
+      "@iot.id": "ID INT HERE"
+    },
+    "components": [
+      "phenomenonTime",
+      "result",
+      "FeatureOfInterest/id"
+    ],
+    "dataArray@iot.count": "COUNT GOES HERE",
+    "dataArray": [
+      [
+        "PHENOMENON TIME STRING",
+        "RESULT URL",
+        "FOI ID"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "metadata": "Webcam",
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Sensors(1205777)",
+  "Datastreams@iot.navigationLink": "../Sensors(1205777)/Datastreams",
+  "@iot.id": 1205777,
+  "encodingType": "http://schema.org/description",
+  "description": "Microsoft Lifecam VX-3000"
+}

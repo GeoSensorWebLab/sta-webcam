@@ -1,0 +1,8 @@
+{
+  "metadata": "Webcam",
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/Sensors(1654445)",
+  "Datastreams@iot.navigationLink": "../Sensors(1654445)/Datastreams",
+  "@iot.id": 1654445,
+  "encodingType": "http://schema.org/description",
+  "description": "Logitech C920 HD Pro Webcam"
+}

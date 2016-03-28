@@ -1,0 +1,20 @@
+{
+  "@iot.selfLink": "http://chashuhotpot.sensorup.com/OGCSensorThings/v1.0/FeaturesOfInterest(1654448)",
+  "feature": {
+    "geometry": {
+      "coordinates": [
+        -114.1345,
+        51.0805
+      ],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "openstreetmap@link": "https://www.openstreetmap.org/#map=19/51.08050/-114.13450"
+    }
+  },
+  "@iot.id": 1654448,
+  "encodingType": "application/vnd.geo+json",
+  "description": "Parking Lot 12 and 63, University of Calgary, Calgary, Canada",
+  "Observations@iot.navigationLink": "../FeaturesOfInterest(1654448)/Observations"
+}
