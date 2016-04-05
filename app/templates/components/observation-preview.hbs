@@ -9,7 +9,13 @@
 </ul>
 <div class="preview">
   <div class="result-preview">
+    {{#if isImage}}
     <img src="{{observation.result}}" class="img-responsive" />
+    {{else}}
+    <h4>
+      <a href="{{observation.result}}">{{observation.result}}</a>
+    </h4>
+    {{/if}}
   </div>
 
   <div class="feature-preview">

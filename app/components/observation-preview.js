@@ -21,5 +21,14 @@ export default Ember.Component.extend({
         this.$("li").toggleClass("active");
       }
     });
-  }
+  },
+
+  isImage: Ember.computed('observation.result', function () {
+    var result = this.get('observation.result');
+    if (result) {
+      return result.search(/\.(png|gif|jpg|jpeg)$/) !== -1;
+    } else {
+      return false;
+    }
+  })
 });
