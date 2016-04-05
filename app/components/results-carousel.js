@@ -18,6 +18,15 @@ export default Ember.Component.extend(RecognizerMixin, {
     return this.getActiveOffset(-1) !== undefined;
   }),
 
+  isImage: Ember.computed('active-observation.result', function () {
+    var result = this.get('active-observation.result');
+    if (result) {
+      return result.search(/\.(png|gif|jpg|jpeg)$/) !== -1;
+    } else {
+      return false;
+    }
+  }),
+
   actions: {
     loadNewer() {
       this.get('datastream.observations').reload();
