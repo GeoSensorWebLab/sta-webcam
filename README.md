@@ -42,10 +42,10 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 This app is designed to be deployed to Heroku or Heroku-like platforms such as Dokku.
 
-    $ git remote add dokku dokku@sarcee:sta-webcam
-    $ ssh dokku@sarcee apps:create sta-webcam
-    $ ssh dokku@sarcee domains:add sta-webcam webcam.geocens.ca
-    $ ssh dokku@sarcee config:set sta-webcam BUILDPACK_URL=https://github.com/tonycoco/heroku-buildpack-ember-cli.git
+    $ git remote add dokku dokku@beddington:sta-webcam
+    $ ssh dokku@beddington apps:create sta-webcam
+    $ ssh dokku@beddington domains:add sta-webcam webcam.geocens.ca
+    $ ssh dokku@beddington config:set sta-webcam BUILDPACK_URL=https://github.com/tonycoco/heroku-buildpack-ember-cli.git
     $ git push dokku master
 
 ## Further Reading / Useful Links
