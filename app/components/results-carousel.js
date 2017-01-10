@@ -19,20 +19,23 @@ export default Ember.Component.extend(RecognizerMixin, {
   }),
 
   isImage: Ember.computed('active-observation.result', function () {
-    var result = this.get('active-observation.result');
-    if (result) {
-      return result.search(/\.(png|gif|jpg|jpeg)$/) !== -1;
-    } else {
-      return false;
-    }
+    return this.hasImageExtension(this.get('active-observation.result'));
   }),
 
   nextObservation: Ember.computed('observations', 'active-observation', function() {
     return this.getActiveOffset(1);
   }),
 
+  nextIsImage: Ember.computed('observations', 'active-observation', function() {
+    return this.hasImageExtension(this.getActiveOffset(1).get('result'));
+  }),
+
   previousObservation: Ember.computed('observations', 'active-observation', function() {
     return this.getActiveOffset(-1);
+  }),
+
+  previousIsImage: Ember.computed('observations', 'active-observation', function() {
+    return this.hasImageExtension(this.getActiveOffset(-1).get('result'));
   }),
 
   actions: {
@@ -68,6 +71,14 @@ export default Ember.Component.extend(RecognizerMixin, {
   didRender() {
     this._super(...arguments);
     this.willLoadImage();
+  },
+
+  hasImageExtension(result) {
+    if (result) {
+      return result.search(/\.(png|gif|jpg|jpeg)$/) !== -1;
+    } else {
+      return false;
+    }
   },
 
   // set the initially active observation after the observation have been
