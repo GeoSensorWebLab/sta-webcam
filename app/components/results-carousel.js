@@ -55,10 +55,9 @@ export default Ember.Component.extend(RecognizerMixin, {
     this._super.apply(this, arguments);
   },
 
-  didInsertElement() {
-    this.$('img').on('load', () => {
-      this.set('isLoading', false);
-    });
+  didRender() {
+    this._super(...arguments);
+    this.willLoadImage();
   },
 
   // set the initially active observation after the observation have been
@@ -75,5 +74,13 @@ export default Ember.Component.extend(RecognizerMixin, {
     var active = this.get('active-observation');
     var index = observations.indexOf(active);
     return observations.objectAt(index + offset);
+  },
+
+  willLoadImage() {
+    if (this.get('isImage')) {
+      this.$('img').one('load', () => {
+        this.set('isLoading', false);
+      });
+    }
   }
 });
