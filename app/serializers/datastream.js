@@ -1,7 +1,8 @@
 import ApplicationSerializer from './application';
 
 function addLinks(payload) {
-  // Add link for latest (by phenomenonTime) item
+  // Add link for latest (by phenomenonTime) item. This makes Ember Data's async
+  // retrieve a smaller response from SensorThings API.
   payload["LastObservation@iot.navigationLink"] = payload["Observations@iot.navigationLink"] + "?$orderby=phenomenonTime desc&$top=1";
   // Add sorting for observations collection
   payload["Observations@iot.navigationLink"] += "?$orderby=phenomenonTime desc";

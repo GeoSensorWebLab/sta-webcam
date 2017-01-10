@@ -21,6 +21,8 @@ function extractLinks(payload) {
   return payload;
 }
 
+// Modify the REST Serializer to be able to parse SensorThings API responses
+// and convert them to JSON API for Ember Data to use internally.
 export default DS.RESTSerializer.extend({
   primaryKey: '@iot.id',
 

@@ -2,6 +2,8 @@ import config from '../config/environment';
 import DS from 'ember-data';
 import Ember from 'ember';
 
+// Modify the Ember Data REST Adapter to change the URLs and paths to be
+// compatible with SensorThings API. Also see changes in the serializers.
 export default DS.RESTAdapter.extend({
   host: config.APP.staURL,
   namespace: config.APP.staPath,

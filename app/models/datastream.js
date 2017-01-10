@@ -12,5 +12,9 @@ export default DS.Model.extend({
   sensor: DS.belongsTo('sensor'),
 
   // Custom Relationships
+  // This is a fake relationship we create by also adding a fake navigationLink
+  // in the Datastream serializer, it lets Ember retrieve this model from the
+  // server and only retrieve 1 entity instead of the latest 100 entities.
+  // Retrieving 1 entity is noticeably faster.
   'last-observation': DS.hasMany('observation')
 });
