@@ -27,6 +27,14 @@ export default Ember.Component.extend(RecognizerMixin, {
     }
   }),
 
+  nextObservation: Ember.computed('observations', 'active-observation', function() {
+    return this.getActiveOffset(1);
+  }),
+
+  previousObservation: Ember.computed('observations', 'active-observation', function() {
+    return this.getActiveOffset(-1);
+  }),
+
   actions: {
     loadNewer() {
       this.get('datastream.observations').reload();

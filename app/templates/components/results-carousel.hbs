@@ -19,6 +19,7 @@
 <div class="left carousel-control" {{action "loadPrevious"}}>
   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
   <span class="sr-only">Previous</span>
+  <img src="{{previousObservation.result}}" class="img-responsive">
 </div>
 {{/if}}
 
@@ -26,6 +27,7 @@
 <div class="right carousel-control" {{action "loadNext"}}>
   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
   <span class="sr-only">Next</span>
+  <img src="{{nextObservation.result}}" class="img-responsive">
 </div>
 {{else}}
 <div class="right carousel-control" {{action "loadNewer"}}>
