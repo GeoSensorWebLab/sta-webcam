@@ -1,6 +1,8 @@
 # sta-webcam
 
-SensorThings webcam dashboard in Ember.js.
+SensorThings API webcam dashboard in Ember.js. See a live demo:
+
+http://webcam.geocens.ca/
 
 ## Prerequisites
 
@@ -24,23 +26,30 @@ You will need the following things properly installed on your computer.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## Customization
 
-Make use of the many generators for code, try `ember help generate` for more details
+Inside `config/environment.js` there are four variables that should be customized:
 
-### Running Tests
+```javascript
+APP: {
+  // Here you can pass flags/options to your application instance
+  // when it is created
+  defaultThingID: 620900,
+  mqttURL: 'ws://scratchpad.sensorup.com:9001',
+  staPath: 'OGCSensorThings/v1.0',
+  staURL: 'http://scratchpad.sensorup.com'
+}
+```
 
-* `ember test`
-* `ember test --server`
+These define what entity will be displayed by default. The app assumes the SensorThings API instance also has MQTT support.
 
-### Building
+You should also customize `app/templates/application.hbs` and change the maintainer information. DO NOT leave "GeoSensorWeb Lab" in the footer if you are running this app in production!
 
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
+## Deploying
 
 This app is designed to be deployed to Heroku or Heroku-like platforms such as Dokku.
+
+Here are the basic instructions for GeoSensorWeb Lab, where `beddington` is an SSH alias.
 
     $ git remote add dokku dokku@beddington:sta-webcam
     $ ssh dokku@beddington apps:create sta-webcam
