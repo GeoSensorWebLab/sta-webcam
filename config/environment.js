@@ -16,6 +16,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      defaultThingID: 620900,
+      mqttURL: 'ws://scratchpad.sensorup.com:9001',
+      staPath: 'OGCSensorThings/v1.0',
+      staURL: 'http://scratchpad.sensorup.com'
     }
   };
 

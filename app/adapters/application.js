@@ -1,9 +1,10 @@
+import config from '../config/environment';
 import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.RESTAdapter.extend({
-  host: "http://chashuhotpot.sensorup.com",
-  namespace: "OGCSensorThings/v1.0",
+  host: config.APP.staURL,
+  namespace: config.APP.staPath,
 
   _buildURL: function(type, id) {
     var url = [];

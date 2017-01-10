@@ -1,10 +1,11 @@
+import config from '../config/environment';
 import Ember from 'ember';
 import mqtt from 'npm:mqtt';
 
 var inflector = new Ember.Inflector(Ember.Inflector.defaultRules);
 
 var clientReady = new Promise(function(resolve) {
-  var client = mqtt.connect('ws://52.27.116.47:9001');
+  var client = mqtt.connect(config.APP.mqttURL);
   client.on('connect', function () {
     resolve(client);
   });
@@ -30,7 +31,7 @@ export default Ember.Route.extend({
           var serializer = this.store.serializerFor("observation");
           var payload = serializer.normalizeSingleResponse(this.store, modelClass, object, object["@iot.id"]);
           var observation = this.store.push(payload);
-          
+
           datastream.get('last-observation').pushObject(observation);
         }
       });
@@ -40,7 +41,7 @@ export default Ember.Route.extend({
   },
 
   model() {
-    return this.store.findRecord("thing", 1205774);
+    return this.store.findRecord("thing", config.APP.defaultThingID);
   },
 
   subscribe(subPath) {
