@@ -57,6 +57,10 @@ Here are the basic instructions for GeoSensorWeb Lab, where `beddington` is an S
     $ ssh dokku@beddington config:set sta-webcam BUILDPACK_URL=https://github.com/tonycoco/heroku-buildpack-ember-cli.git
     $ git push dokku master
 
+## License
+
+This application is published under the MIT License.
+
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
