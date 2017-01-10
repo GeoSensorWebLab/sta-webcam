@@ -50,7 +50,9 @@ export default Ember.Component.extend(RecognizerMixin, {
   },
 
   init() {
-    this.get('datastream.observations');
+    if (this.get('datastream.observations').isFulfilled) {
+      this.initActiveObservation();
+    }
     this.addObserver('datastream.observations', this, 'initActiveObservation');
     this._super.apply(this, arguments);
   },
