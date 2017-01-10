@@ -46,3 +46,7 @@ nav {
 .results-carousel .carousel-control {
   cursor: pointer;
 }
+
+code {
+  overflow-wrap: break-word;
+}
